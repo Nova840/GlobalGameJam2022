@@ -11,21 +11,30 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
 
-    private Transform targetingPlayer;
+    public Transform TargetingPlayer { get; private set; }
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        targetingPlayer = Random.Range(0, 2) == 0 ? Player.leftPlayer : Player.rightPlayer;
+        TargetingPlayer = Random.Range(0, 2) == 0 ? Player.leftPlayer : Player.rightPlayer;
 
         //temporary until I get artwork
-        Transform otherPlayer = targetingPlayer == Player.leftPlayer ? Player.rightPlayer : Player.leftPlayer;
+        Transform otherPlayer = TargetingPlayer == Player.leftPlayer ? Player.rightPlayer : Player.leftPlayer;
         GetComponentInChildren<SpriteRenderer>().color = otherPlayer.GetComponentInChildren<SpriteRenderer>().color;
     }
 
     private void FixedUpdate()
     {
-        _rigidbody.velocity = (targetingPlayer.position - transform.position).normalized * moveSpeed;
+        _rigidbody.velocity = (TargetingPlayer.position - transform.position).normalized * moveSpeed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Shot shot = collision.attachedRigidbody.GetComponent<Shot>();
+        if (shot && shot.PlayerShotFrom == TargetingPlayer)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

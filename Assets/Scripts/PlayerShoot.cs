@@ -27,7 +27,8 @@ public class PlayerShoot : MonoBehaviour
     {
         if (playerInput.GetShootButtonUp())
         {
-            Instantiate(shotPrefab, transform.position, Quaternion.LookRotation(Vector3.forward, playerInput.GetShootingInputVector()));
+            Shot shot = Instantiate(shotPrefab, transform.position, Quaternion.LookRotation(Vector3.forward, playerInput.GetShootingInputVector())).GetComponent<Shot>();
+            shot.Initialize(transform);
             aimPoint.gameObject.SetActive(false);
         }
         else if (playerInput.GetShootButtonDown())
