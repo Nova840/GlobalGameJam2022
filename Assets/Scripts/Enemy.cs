@@ -9,6 +9,10 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 2;
 
+    [Range(0, 1)]
+    [SerializeField]
+    private float damage = .25f;
+
     private Rigidbody2D _rigidbody;
 
     public Transform TargetingPlayer { get; private set; }
@@ -33,6 +37,13 @@ public class Enemy : MonoBehaviour
         Shot shot = collision.attachedRigidbody.GetComponent<Shot>();
         if (shot && shot.PlayerShotFrom == TargetingPlayer)
         {
+            Destroy(gameObject);
+        }
+
+        Player player = collision.attachedRigidbody.GetComponent<Player>();
+        if (player && player.transform == TargetingPlayer)
+        {
+            player.GetComponent<PlayerHealth>().Damage(damage);
             Destroy(gameObject);
         }
     }
