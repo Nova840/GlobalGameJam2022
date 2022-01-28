@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+    [Min(0)]
     [SerializeField]
     private float maxSpeed = 5;
 
+    [Min(0)]
     [SerializeField]
     private float acceleration = 5;
 

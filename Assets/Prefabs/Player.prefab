@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLeftPlayer: 1
+  triggerInputThreshold: 0.5
 --- !u!114 &4143249425948401017
 MonoBehaviour:
   m_ObjectHideFlags: 0

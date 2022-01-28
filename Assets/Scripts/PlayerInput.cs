@@ -8,7 +8,13 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     private bool isLeftPlayer = true;
 
+    [Range(0, 1)]
+    [SerializeField]
+    private float triggerInputThreshold = .5f;
+
     private Vector2 shootingInputVector;
+
+    private bool leftShootLastFrame, rightShootLastFrame;
 
     public Vector2 GetMovingInputVector()
     {
@@ -31,17 +37,42 @@ public class PlayerInput : MonoBehaviour
 
     public bool GetShootButton()
     {
-        return Input.GetButton(isLeftPlayer ? "Left Shoot" : "Right Shoot");
+        if (isLeftPlayer)
+            return Input.GetAxisRaw("Left Shoot") >= triggerInputThreshold;
+        else
+            return Input.GetAxisRaw("Right Shoot") >= triggerInputThreshold;
     }
 
     public bool GetShootButtonDown()
     {
-        return Input.GetButtonDown(isLeftPlayer ? "Left Shoot" : "Right Shoot");
+        if (isLeftPlayer)
+            return GetShootButton() && GetShootButton() != leftShootLastFrame;
+        else
+            return GetShootButton() && GetShootButton() != rightShootLastFrame;
     }
 
     public bool GetShootButtonUp()
     {
-        return Input.GetButtonUp(isLeftPlayer ? "Left Shoot" : "Right Shoot");
+        if (isLeftPlayer)
+            return !GetShootButton() && GetShootButton() != leftShootLastFrame;
+        else
+            return !GetShootButton() && GetShootButton() != rightShootLastFrame;
+    }
+
+    private void Start()
+    {
+        SetShooting();
+    }
+
+    private void LateUpdate()
+    {
+        SetShooting();
+    }
+
+    private void SetShooting()
+    {
+        leftShootLastFrame = Input.GetAxisRaw("Left Shoot") >= triggerInputThreshold;
+        rightShootLastFrame = Input.GetAxisRaw("Right Shoot") >= triggerInputThreshold;
     }
 
 }
