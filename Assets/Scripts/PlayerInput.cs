@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
 
-    [SerializeField]
-    private bool isLeftPlayer = true;
+    private Player player;
 
     [Range(0, 1)]
     [SerializeField]
@@ -16,10 +15,15 @@ public class PlayerInput : MonoBehaviour
 
     private bool leftShootLastFrame, rightShootLastFrame;
 
+    private void Awake()
+    {
+        player = GetComponent<Player>();
+    }
+
     public Vector2 GetMovingInputVector()
     {
         Vector2 v;
-        if (isLeftPlayer)
+        if (player.IsLeftPlayer)
             v = new Vector2(Input.GetAxisRaw("Left Movement X"), Input.GetAxisRaw("Left Movement Y"));
         else
             v = new Vector2(Input.GetAxisRaw("Right Movement X"), Input.GetAxisRaw("Right Movement Y"));
@@ -37,7 +41,7 @@ public class PlayerInput : MonoBehaviour
 
     public bool GetShootButton()
     {
-        if (isLeftPlayer)
+        if (player.IsLeftPlayer)
             return Input.GetAxisRaw("Left Shoot") >= triggerInputThreshold;
         else
             return Input.GetAxisRaw("Right Shoot") >= triggerInputThreshold;
@@ -45,7 +49,7 @@ public class PlayerInput : MonoBehaviour
 
     public bool GetShootButtonDown()
     {
-        if (isLeftPlayer)
+        if (player.IsLeftPlayer)
             return GetShootButton() && GetShootButton() != leftShootLastFrame;
         else
             return GetShootButton() && GetShootButton() != rightShootLastFrame;
@@ -53,7 +57,7 @@ public class PlayerInput : MonoBehaviour
 
     public bool GetShootButtonUp()
     {
-        if (isLeftPlayer)
+        if (player.IsLeftPlayer)
             return !GetShootButton() && GetShootButton() != leftShootLastFrame;
         else
             return !GetShootButton() && GetShootButton() != rightShootLastFrame;
