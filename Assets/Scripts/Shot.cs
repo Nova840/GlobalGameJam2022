@@ -31,14 +31,14 @@ public class Shot : MonoBehaviour
         this.damage = damage;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.attachedRigidbody.TryGetComponent(out Enemy enemy) && enemy.TargetingPlayer == ShotFrom)
+        if (collider.attachedRigidbody.TryGetComponent(out Enemy enemy) && enemy.TargetingPlayer == ShotFrom)
         {
             enemy.GetComponent<Health>().Damage(damage);
             Destroy(gameObject);
         }
-        if (enemyShotFrom && collision.attachedRigidbody.TryGetComponent(out Player player) && enemyShotFrom.TargetingPlayer == player.transform)
+        if (enemyShotFrom && collider.CompareTag("PlayerHitTrigger") && collider.attachedRigidbody.TryGetComponent(out Player player) && enemyShotFrom.TargetingPlayer == player.transform)
         {
             player.GetComponent<Health>().Damage(damage);
             Destroy(gameObject);

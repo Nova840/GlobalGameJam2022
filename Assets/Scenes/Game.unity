@@ -465,6 +465,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 2332282800254640168, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
   - {fileID: 6907191051561379671, guid: 86979dff9a914544b961f2ed91691265, type: 3}
+  - {fileID: 2689589903917495643, guid: 6ef5f0738b4717944ac84a649678738c, type: 3}
   spawnDistanceFrom0: 10
 --- !u!114 &487407094
 MonoBehaviour:
