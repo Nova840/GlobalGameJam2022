@@ -43,9 +43,9 @@ public abstract class Enemy : MonoBehaviour
         OnEnemyDefeated?.Invoke();
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.attachedRigidbody.TryGetComponent(out Player player) && player.transform == TargetingPlayer)
+        if (collider.CompareTag("PlayerHitTrigger") && collider.attachedRigidbody.TryGetComponent(out Player player) && player.transform == TargetingPlayer)
         {
             player.GetComponent<Health>().Damage(hitDamage);
             Destroy(gameObject);

@@ -36,13 +36,25 @@ public class Shot : MonoBehaviour
         if (collider.attachedRigidbody.TryGetComponent(out Enemy enemy) && enemy.TargetingPlayer == ShotFrom)
         {
             enemy.GetComponent<Health>().Damage(damage);
-            Destroy(gameObject);
+            DestroyAndDetachParticles();
         }
         if (enemyShotFrom && collider.CompareTag("PlayerHitTrigger") && collider.attachedRigidbody.TryGetComponent(out Player player) && enemyShotFrom.TargetingPlayer == player.transform)
         {
             player.GetComponent<Health>().Damage(damage);
-            Destroy(gameObject);
+            DestroyAndDetachParticles();
         }
+    }
+
+    private void DestroyAndDetachParticles()
+    {
+        foreach (ParticleSystem ps in GetComponentsInChildren<ParticleSystem>())
+        {
+            Destroy(ps.gameObject, destroyTime);
+            ps.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            ps.transform.SetParent(null, true);
+            ps.transform.localScale = Vector3.one;
+        }
+        Destroy(gameObject);
     }
 
 }
