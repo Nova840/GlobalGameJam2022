@@ -116,15 +116,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FireElemental
+      name: FireElemental_01
       rect:
         serializedVersion: 2
-        x: 94
-        y: 124
-        width: 344
-        height: 330
+        x: 269
+        y: 669
+        width: 340
+        height: 328
       alignment: 9
-      pivot: {x: 0.42681664, y: 0.48219946}
+      pivot: {x: 0.43526664, y: 0.48168406}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -137,15 +137,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IceElemental
+      name: IceElemental_01
       rect:
         serializedVersion: 2
-        x: 687
-        y: 84
-        width: 449
+        x: 228
+        y: 138
+        width: 445
         height: 362
       alignment: 9
-      pivot: {x: 0.47757223, y: 0.55099934}
+      pivot: {x: 0.4999046, y: 0.5372437}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,15 +158,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FireBlast
+      name: FireBlast_01
       rect:
         serializedVersion: 2
-        x: 425
-        y: 230
-        width: 219
-        height: 112
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 354
+        y: 558
+        width: 197
+        height: 83
+      alignment: 9
+      pivot: {x: 0.77742445, y: 0.514952}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -179,13 +179,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ice Blast
+      name: IceBlast
       rect:
         serializedVersion: 2
-        x: 1131
-        y: 249
-        width: 224
-        height: 114
+        x: 392
+        y: 51
+        width: 209
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,6 +195,132 @@ TextureImporter:
       bones: []
       spriteID: 4eee64eb4a89f044890de61af0bd8584
       internalID: -2136482873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireElemental_02
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 664
+        width: 340
+        height: 371
+      alignment: 9
+      pivot: {x: 0.43541744, y: 0.43676972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5430a49a1c2b59c468b46169fe0b68aa
+      internalID: 2108831329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireElemental_03
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 669
+        width: 340
+        height: 298
+      alignment: 9
+      pivot: {x: 0.43529198, y: 0.530425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9401b50e4a390e4291c7d5ff7796e80
+      internalID: 1718696316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBlast_02
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 555
+        width: 224
+        height: 87
+      alignment: 9
+      pivot: {x: 0.77742445, y: 0.514952}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd982b037a97bb74ea0b4dc7c527c48b
+      internalID: -308307298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBlast_03
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 554
+        width: 244
+        height: 95
+      alignment: 9
+      pivot: {x: 0.820309, y: 0.51495105}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6faf254af86533e4281be9229c8d70d5
+      internalID: 1498630266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceElemental_02
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 138
+        width: 445
+        height: 362
+      alignment: 9
+      pivot: {x: 0.4999046, y: 0.5372437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47bebc13a7ca7b244a487803616bb1c8
+      internalID: -463149012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceElemental_03
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 138
+        width: 445
+        height: 362
+      alignment: 9
+      pivot: {x: 0.4999046, y: 0.5372437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553b31da05db12b4a9abb09400bfab21
+      internalID: -547720149
       vertices: []
       indices: 
       edges: []
@@ -210,10 +336,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FireBlast: 549399396
-      Ice Blast: -2136482873
-      FireElemental: 516651988
-      IceElemental: -1194858020
+      FireElemental_02: 2108831329
+      FireElemental_01: 516651988
+      IceBlast: -2136482873
+      IceElemental_03: -547720149
+      FireBlast_01: 549399396
+      FireBlast_02: -308307298
+      FireBlast_03: 1498630266
+      IceElemental_01: -1194858020
+      IceElemental_02: -463149012
+      FireElemental_03: 1718696316
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
