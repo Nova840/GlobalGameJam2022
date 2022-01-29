@@ -185,8 +185,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8373785762232868328}
   - component: {fileID: 3950147556943389784}
+  - component: {fileID: 5748567512301784963}
   m_Layer: 6
-  m_Name: Hexagon Flat-Top
+  m_Name: BaseSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,6 +260,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5748567512301784963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308639559299351222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ed93f4745305e45b4f1573c1d55b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4685845930727499765
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47265ab92fc39b7489748a886bad8497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
 --- !u!210 &8930415398665036488
 SortingGroup:
   m_ObjectHideFlags: 0
