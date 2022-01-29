@@ -5044,6 +5044,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1468226910929560015, guid: 1b0a4c5d70109af43a82bf57c73417f7, type: 3}
+      propertyPath: hitEfect
+      value: 
+      objectReference: {fileID: 8686903520920466935, guid: 6e9cd2773679bee42bc2e53f23cf74e9, type: 3}
     - target: {fileID: 641884720636474967, guid: 1b0a4c5d70109af43a82bf57c73417f7, type: 3}
       propertyPath: m_IsActive
       value: 0
