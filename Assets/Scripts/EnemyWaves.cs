@@ -6,15 +6,14 @@ using Random = UnityEngine.Random;
 
 public class EnemyWaves : MonoBehaviour
 {
-
-    private static EnemyWaves instance;
-
     private int wave = 0;//starts from wave 0
 
     [SerializeField]
     private Wave[] waves = default;
 
     private Wave CurrentWave => waves[Mathf.Min(waves.Length - 1, wave)];
+
+    public event Action<int> OnWaveChange;
 
     [Serializable]
     public class Wave
@@ -42,13 +41,13 @@ public class EnemyWaves : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
         Enemy.OnEnemyDefeated += OnEnemyDefeated;
     }
 
     private void Start()
     {
         StartCoroutine(SpawnEnemies());
+        OnWaveChange?.Invoke(0);
     }
 
     private void OnDestroy()
@@ -69,6 +68,7 @@ public class EnemyWaves : MonoBehaviour
     {
         enemiesDefeatedThisWave = 0;
         wave++;
+        OnWaveChange?.Invoke(wave);
         Debug.Log("Wave complete! Entering wave " + wave);
         if (betweenWavesDelay > 0)
             yield return new WaitForSeconds(betweenWavesDelay);
