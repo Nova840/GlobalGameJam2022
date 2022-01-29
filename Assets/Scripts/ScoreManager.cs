@@ -27,6 +27,7 @@ public class ScoreManager : MonoBehaviour
     private void OnDestroy()
     {
         Enemy.OnEnemyDefeated -= OnEnemyDefeated;
+        SaveScore(Score);
     }
 
     private void OnEnemyDefeated()
@@ -34,4 +35,6 @@ public class ScoreManager : MonoBehaviour
         Score++;
     }
 
+	public static void SaveScore(int score) => PlayerPrefs.SetInt("Score", score);
+    public static int LoadScore() => PlayerPrefs.GetInt("Score", 0);
 }
