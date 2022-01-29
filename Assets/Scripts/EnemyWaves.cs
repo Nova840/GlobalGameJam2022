@@ -67,7 +67,6 @@ public class EnemyWaves : MonoBehaviour
         enemiesDefeatedThisWave = 0;
         wave++;
         OnWaveChange?.Invoke(wave);
-        Debug.Log("Wave complete! Entering wave " + wave);
         if (betweenWavesDelay > 0)
             yield return new WaitForSeconds(betweenWavesDelay);
         StartCoroutine(SpawnEnemies());
@@ -75,7 +74,6 @@ public class EnemyWaves : MonoBehaviour
 
     private IEnumerator SpawnEnemies()
     {
-        Debug.Log("Spawning " + CurrentWave.numEnemies + " enemies.");
         for (int i = 0; i < CurrentWave.numEnemies; i++)
         {
             Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], Random.insideUnitCircle.normalized * spawnDistanceFrom0, Quaternion.identity);
