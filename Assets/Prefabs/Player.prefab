@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 5944383035633975525}
   m_Layer: 6
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: PlayerHitTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -512,6 +512,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c346e59b4a6f4b438b23ac4ff07645c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shotSpeed: 10
+  shotDamage: 100
   shotPrefab: {fileID: 641884720806868823, guid: 1b0a4c5d70109af43a82bf57c73417f7, type: 3}
   aimPoint: {fileID: 5398164351116989125}
 --- !u!114 &851366721428305475
@@ -526,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47265ab92fc39b7489748a886bad8497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  maxHealth: 100
 --- !u!210 &8930415398665036488
 SortingGroup:
   m_ObjectHideFlags: 0
