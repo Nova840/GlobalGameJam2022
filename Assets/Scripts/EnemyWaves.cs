@@ -9,7 +9,7 @@ public class EnemyWaves : MonoBehaviour
     private int wave = 0;//starts from wave 0
 
     [SerializeField]
-    private Wave[] waves = default;
+    private Wave[] waves;
 
     private Wave CurrentWave => waves[Mathf.Min(waves.Length - 1, wave)];
 
@@ -28,10 +28,10 @@ public class EnemyWaves : MonoBehaviour
 
     [Min(0)]
     [SerializeField]
-    private float betweenWavesDelay = default;
+    private float betweenWavesDelay;
 
     [SerializeField]
-    private GameObject enemyPrefab = default;
+    private GameObject enemyPrefab;
 
     [Min(0)]
     [SerializeField]

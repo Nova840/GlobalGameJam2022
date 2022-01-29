@@ -7,7 +7,7 @@ public class HealthBar : MonoBehaviour
 {
 
     [SerializeField]
-    private Image fillImage = default;
+    private Image fillImage;
 
     private PlayerHealth playerHealth;
 
