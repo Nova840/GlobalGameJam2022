@@ -12,7 +12,7 @@ public sealed class PlayerHealthUI : MonoBehaviour
 
 	private void Update()
 	{
-		displayHealthPecentage = Mathf.Lerp(displayHealthPecentage, healthPercentage, 10 * Time.deltaTime);
+		displayHealthPecentage = Mathf.Lerp(displayHealthPecentage, healthPercentage, 10 * Time.unscaledDeltaTime);
 		healthBar.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, HealthBarWidth);
 
 		if (displayHealthPecentage == healthPercentage)
