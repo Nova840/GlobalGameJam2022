@@ -7,8 +7,6 @@ using Random = UnityEngine.Random;
 public class EnemyWaves : MonoBehaviour
 {
 
-    private static EnemyWaves instance;
-
     private int wave = 0;//starts from wave 0
 
     [SerializeField]
@@ -42,7 +40,6 @@ public class EnemyWaves : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
         Enemy.OnEnemyDefeated += OnEnemyDefeated;
     }
 
