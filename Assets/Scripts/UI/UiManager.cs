@@ -19,7 +19,7 @@ public sealed class UiManager : MonoBehaviour
 
 		foreach (var player in players)
 		{
-			if (player.TryGetComponent(out PlayerHealth playerHealth))
+			if (player.TryGetComponent(out Health playerHealth))
 			{
 				playerHealth.OnHealthChange += player.IsLeftPlayer ? iceHealthUI.SetHeath : fireHealthUI.SetHeath;
 			}

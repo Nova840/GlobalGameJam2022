@@ -373,39 +373,30 @@ MonoBehaviour:
   waves:
   - numEnemies: 3
     spawnInterval: 5
-    enemySpeed: 1
   - numEnemies: 8
     spawnInterval: 2
-    enemySpeed: 1
   - numEnemies: 10
     spawnInterval: 1.8
-    enemySpeed: 1
   - numEnemies: 12
     spawnInterval: 1.6
-    enemySpeed: 1.1
   - numEnemies: 14
     spawnInterval: 1.4
-    enemySpeed: 1.2
   - numEnemies: 16
     spawnInterval: 1.2
-    enemySpeed: 1.3
   - numEnemies: 18
     spawnInterval: 1
-    enemySpeed: 1.4
   - numEnemies: 20
     spawnInterval: 0.8
-    enemySpeed: 1.5
   - numEnemies: 22
     spawnInterval: 0.6
-    enemySpeed: 1.6
   - numEnemies: 24
     spawnInterval: 0.4
-    enemySpeed: 1.7
   - numEnemies: 26
     spawnInterval: 0.2
-    enemySpeed: 1.8
   betweenWavesDelay: 3
-  enemyPrefab: {fileID: 2332282800254640168, guid: 544690c89bdcc3c4e8adcdd095e375af, type: 3}
+  enemyPrefabs:
+  - {fileID: 2332282800254640168, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
+  - {fileID: 6907191051561379671, guid: 86979dff9a914544b961f2ed91691265, type: 3}
   spawnDistanceFrom0: 10
 --- !u!114 &487407094
 MonoBehaviour:

@@ -5,6 +5,14 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
 
+    [Min(0)]
+    [SerializeField]
+    private float shotSpeed = 10;
+
+    [Min(0)]
+    [SerializeField]
+    private int shotDamage = 100;
+
     [SerializeField]
     private GameObject shotPrefab;
 
@@ -28,7 +36,7 @@ public class PlayerShoot : MonoBehaviour
         if (playerInput.GetShootButtonUp())
         {
             Shot shot = Instantiate(shotPrefab, transform.position, Quaternion.LookRotation(Vector3.forward, playerInput.GetShootingInputVector())).GetComponent<Shot>();
-            shot.Initialize(transform);
+            shot.Initialize(transform, shotSpeed, shotDamage);
             aimPoint.gameObject.SetActive(false);
         }
         else if (playerInput.GetShootButtonDown())

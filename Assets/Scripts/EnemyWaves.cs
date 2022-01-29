@@ -22,8 +22,6 @@ public class EnemyWaves : MonoBehaviour
         public int numEnemies;
         [Min(0)]
         public float spawnInterval;
-        [Min(0)]
-        public float enemySpeed;
     }
 
     [Min(0)]
@@ -31,7 +29,7 @@ public class EnemyWaves : MonoBehaviour
     private float betweenWavesDelay;
 
     [SerializeField]
-    private GameObject enemyPrefab;
+    private GameObject[] enemyPrefabs;
 
     [Min(0)]
     [SerializeField]
@@ -80,8 +78,7 @@ public class EnemyWaves : MonoBehaviour
         Debug.Log("Spawning " + CurrentWave.numEnemies + " enemies.");
         for (int i = 0; i < CurrentWave.numEnemies; i++)
         {
-            Enemy enemy = Instantiate(enemyPrefab, Random.insideUnitCircle.normalized * spawnDistanceFrom0, Quaternion.identity).GetComponent<Enemy>();
-            enemy.Initialize(CurrentWave.enemySpeed);
+            Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], Random.insideUnitCircle.normalized * spawnDistanceFrom0, Quaternion.identity);
             if (i < CurrentWave.numEnemies - 1)//skip last element
                 yield return new WaitForSeconds(CurrentWave.spawnInterval);
         }

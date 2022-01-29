@@ -3,9 +3,9 @@ using UnityEngine;
 public sealed class GameManager : MonoBehaviour
 {
     [SerializeField]
-    private PlayerHealth iceCharacter;
+    private Health iceCharacter;
     [SerializeField]
-    private PlayerHealth fireCharacter;
+    private Health fireCharacter;
 	[SerializeField]
 	private SceneHandler sceneHandler;
 

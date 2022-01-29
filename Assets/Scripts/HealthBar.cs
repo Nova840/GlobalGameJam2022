@@ -9,11 +9,11 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     private Image fillImage;
 
-    private PlayerHealth playerHealth;
+    private Health playerHealth;
 
     private void Awake()
     {
-        playerHealth = GetComponentInParent<PlayerHealth>();
+        playerHealth = GetComponentInParent<Health>();
         playerHealth.OnHealthChange += OnHealthChange;
     }
 
@@ -22,9 +22,9 @@ public class HealthBar : MonoBehaviour
         playerHealth.OnHealthChange -= OnHealthChange;
     }
 
-    private void OnHealthChange(float health)
+    private void OnHealthChange(float healthPercentage)
     {
-        fillImage.fillAmount = health;
+        fillImage.fillAmount = healthPercentage;
     }
 
 }
