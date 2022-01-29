@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
 
     private float health = 1;
 
-    public event Action<float> OnHealthChange;
+    public event Action<float> OnHealthChange;//<new health>
 
     public void Damage(float amount)
     {

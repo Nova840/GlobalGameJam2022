@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d0cb89c5993424d936863b18507187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameScene: GameScene
+  gameScene: AdamTestScene
   mainMenuScene: MainMenu
   instructionsScene: Instructions
   creditsScene: Credits

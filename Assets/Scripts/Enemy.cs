@@ -1,13 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
-
-    [Min(0)]
-    [SerializeField]
-    private float moveSpeed = 2;
 
     [Range(0, 1)]
     [SerializeField]
@@ -16,6 +14,16 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D _rigidbody;
 
     public Transform TargetingPlayer { get; private set; }
+
+    public static int EnemiesDefeated { get; private set; } = 0;
+    public static event Action<int> OnEnemyDefeated;//<enemies defeated>
+
+    private float moveSpeed;
+
+    public void Initialize(float moveSpeed)
+    {
+        this.moveSpeed = moveSpeed;
+    }
 
     private void Awake()
     {
@@ -30,6 +38,12 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         _rigidbody.velocity = (TargetingPlayer.position - transform.position).normalized * moveSpeed;
+    }
+
+    private void OnDestroy()
+    {
+        EnemiesDefeated++;
+        OnEnemyDefeated?.Invoke(EnemiesDefeated);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
