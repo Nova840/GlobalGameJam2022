@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+    [SerializeField]
+    private SpriteRenderer mainSprite;
+
     [Min(0)]
     [SerializeField]
     private float maxSpeed = 5;
@@ -22,6 +25,13 @@ public class PlayerMovement : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         _rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        float angleFromRight = Vector2.Angle(playerInput.GetShootingInputVector(), Vector2.right);
+        if (angleFromRight != 90)//don't flip if going exactly up or down
+            mainSprite.flipX = angleFromRight > 90;
     }
 
     private void FixedUpdate()
