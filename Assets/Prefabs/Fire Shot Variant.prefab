@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8952979105867777285}
   - component: {fileID: 701166509239968844}
   - component: {fileID: 2443150639855120324}
+  - component: {fileID: 1489363546737452979}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -4812,6 +4813,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!210 &1489363546737452979
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362803316146136543}
+  m_Enabled: 1
+  m_SortingLayerID: 2030087477
+  m_SortingLayer: -1
+  m_SortingOrder: 0
 --- !u!1 &8681592342072771003
 GameObject:
   m_ObjectHideFlags: 0
@@ -4883,8 +4895,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1840538209
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 549399396, guid: f56f81cc9ff032f42ac37706f55adb2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

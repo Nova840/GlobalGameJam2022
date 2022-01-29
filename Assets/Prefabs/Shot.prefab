@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 641884720806868822}
   - component: {fileID: 91412313288086477}
   - component: {fileID: -1468226910929560015}
-  - component: {fileID: 2456335910092265963}
   m_Layer: 0
   m_Name: Shot
   m_TagString: Untagged
@@ -153,19 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c6d024cc7f4024ca6364309f1f0b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
   destroyTime: 10
---- !u!210 &2456335910092265963
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641884720806868823}
-  m_Enabled: 1
-  m_SortingLayerID: -1840538209
-  m_SortingLayer: 2
-  m_SortingOrder: 0
 --- !u!1 &4969787276381698754
 GameObject:
   m_ObjectHideFlags: 0
