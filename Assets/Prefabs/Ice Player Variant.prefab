@@ -11,6 +11,34 @@ PrefabInstance:
       propertyPath: isLeftPlayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1885454433185097363, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: shotPrefab
+      value: 
+      objectReference: {fileID: 5134570282773270235, guid: 5dcb53db2ecf012498d824721439b505, type: 3}
+    - target: {fileID: 3821742422094009925, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: ShapeModule.alignToDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821742422094009925, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: ShapeModule.randomDirectionAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821742422094009925, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821742422094009925, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.8937981
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821742422094009925, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821742422094009925, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: ShapeModule.sphericalDirectionAmount
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 3950147556943389784, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
       propertyPath: m_Sprite
       value: 
