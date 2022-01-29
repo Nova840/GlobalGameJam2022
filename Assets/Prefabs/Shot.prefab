@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 10
+  hitEfect: {fileID: 6325568050177656434, guid: 9acfcb37d8f639c449ac61a08c9de01e, type: 3}
 --- !u!1 &4969787276381698754
 GameObject:
   m_ObjectHideFlags: 0

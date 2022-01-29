@@ -1,13 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Shot : MonoBehaviour
+public sealed class Shot : MonoBehaviour
 {
-
     [Min(0)]
     [SerializeField]
     private float destroyTime = 10;
+
+    [SerializeField]
+    private GameObject hitEfect;
 
     private float speed;
     private int damage;
@@ -19,8 +20,11 @@ public class Shot : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = transform.up * speed;
         if (destroyTime > 0)
-            yield return new WaitForSeconds(destroyTime);
-        Destroy(gameObject);
+		{
+			yield return new WaitForSeconds(destroyTime);
+		}
+
+		Destroy(gameObject);
     }
 
     public void Initialize(Transform shotFrom, float speed, int damage)
@@ -33,16 +37,28 @@ public class Shot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.attachedRigidbody.TryGetComponent(out Enemy enemy) && enemy.TargetingPlayer == ShotFrom)
+        if (collider.attachedRigidbody.TryGetComponent(out Enemy enemy)
+            && enemy.TargetingPlayer == ShotFrom)
         {
-            enemy.GetComponent<Health>().Damage(damage);
-            DestroyAndDetachParticles();
+            HandleHit(collider);
         }
-        if (enemyShotFrom && collider.CompareTag("PlayerHitTrigger") && collider.attachedRigidbody.TryGetComponent(out Player player) && enemyShotFrom.TargetingPlayer == player.transform)
+        if (enemyShotFrom && collider.CompareTag("PlayerHitTrigger")
+            && collider.attachedRigidbody.TryGetComponent(out Player player)
+            && enemyShotFrom.TargetingPlayer == player.transform)
         {
-            player.GetComponent<Health>().Damage(damage);
-            DestroyAndDetachParticles();
+            HandleHit(collider);
         }
+    }
+
+    private void HandleHit(Collider2D collider)
+    {
+        if (collider.attachedRigidbody.TryGetComponent(out Health health))
+        {
+            health.Damage(damage);
+        }
+        DestroyAndDetachParticles();
+
+        Instantiate(hitEfect, collider.ClosestPoint(transform.position), Quaternion.identity);
     }
 
     private void DestroyAndDetachParticles()
@@ -56,5 +72,4 @@ public class Shot : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
 }
