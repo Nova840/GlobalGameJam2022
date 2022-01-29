@@ -15,8 +15,7 @@ public class Enemy : MonoBehaviour
 
     public Transform TargetingPlayer { get; private set; }
 
-    public static int EnemiesDefeated { get; private set; } = 0;
-    public static event Action<int> OnEnemyDefeated;//<enemies defeated>
+    public static event Action OnEnemyDefeated;
 
     private float moveSpeed;
 
@@ -42,8 +41,7 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        EnemiesDefeated++;
-        OnEnemyDefeated?.Invoke(EnemiesDefeated);
+        OnEnemyDefeated?.Invoke();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

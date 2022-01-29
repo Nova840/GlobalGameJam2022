@@ -56,7 +56,7 @@ public class EnemyWaves : MonoBehaviour
         Enemy.OnEnemyDefeated -= OnEnemyDefeated;
     }
 
-    private void OnEnemyDefeated(int enemiesDefeated)
+    private void OnEnemyDefeated()
     {
         enemiesDefeatedThisWave++;
         if (enemiesDefeatedThisWave >= CurrentWave.numEnemies)
