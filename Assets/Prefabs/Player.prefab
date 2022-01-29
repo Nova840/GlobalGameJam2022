@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 5944383035633975525}
   m_Layer: 6
   m_Name: Collider
-  m_TagString: PlayerHitTrigger
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5099,7 +5099,7 @@ GameObject:
   - component: {fileID: 5275709416960440758}
   m_Layer: 6
   m_Name: Trigger
-  m_TagString: Untagged
+  m_TagString: PlayerHitTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
