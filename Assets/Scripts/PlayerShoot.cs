@@ -6,10 +6,10 @@ public class PlayerShoot : MonoBehaviour
 {
 
     [SerializeField]
-    private GameObject shotPrefab = default;
+    private GameObject shotPrefab;
 
     [SerializeField]
-    private Transform aimPoint = default;
+    private Transform aimPoint;
 
     private PlayerInput playerInput;
 

@@ -46,14 +46,12 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Shot shot = collision.attachedRigidbody.GetComponent<Shot>();
-        if (shot && shot.PlayerShotFrom == TargetingPlayer)
+        if (collision.attachedRigidbody.TryGetComponent(out Shot shot) && shot.PlayerShotFrom == TargetingPlayer)
         {
             Destroy(gameObject);
         }
 
-        Player player = collision.attachedRigidbody.GetComponent<Player>();
-        if (player && player.transform == TargetingPlayer)
+        if (collision.attachedRigidbody.TryGetComponent(out Player player) && player.transform == TargetingPlayer)
         {
             player.GetComponent<PlayerHealth>().Damage(damage);
             Destroy(gameObject);
