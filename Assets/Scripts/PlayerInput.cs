@@ -5,13 +5,14 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
 
-    private Player player;
+    [SerializeField]
+    private SpriteRenderer mainSpriteRenderer;
 
     [Range(0, 1)]
     [SerializeField]
     private float triggerInputThreshold = .5f;
 
-    private Vector2 shootingInputVector;
+    private Player player;
 
     private bool leftShootLastFrame, rightShootLastFrame;
 
@@ -33,10 +34,10 @@ public class PlayerInput : MonoBehaviour
 
     public Vector2 GetShootingInputVector()
     {
-        Vector2 v = GetMovingInputVector();
-        if (v != Vector2.zero)
-            shootingInputVector = v.normalized;
-        return shootingInputVector;
+        Vector2 v = GetMovingInputVector().normalized;
+        if (v == Vector2.zero)
+            v = mainSpriteRenderer.flipX ? Vector2.left : Vector2.right;
+        return v;
     }
 
     public bool GetShootButton()
