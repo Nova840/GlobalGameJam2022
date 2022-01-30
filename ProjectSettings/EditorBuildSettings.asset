@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Screens/Instructions.unity
     guid: e59552166ce294f44a8ebbbf5f540bfd
   - enabled: 1
-    path: Assets/Scenes/Screens/Transistion.unity
+    path: Assets/Scenes/Screens/Transition.unity
     guid: 47577776370f32e4e911ca07a168cb86
   - enabled: 1
     path: Assets/Scenes/Game.unity

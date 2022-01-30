@@ -49,4 +49,4 @@ MonoBehaviour:
   instructionsScene: Instructions
   creditsScene: Credits
   endScene: EndScreen
-  transitionScene: Transistion
+  transitionScene: Transition
