@@ -31,16 +31,20 @@ public sealed class ProjectileEnemy : Enemy
         get
         {
             Vector3 targetPos = TargetingPlayer.position + (transform.position - TargetingPlayer.position).normalized * distanceFromPlayerToStop;
-            return Vector2.ClampMagnitude(targetPos - transform.position, 1) * moveSpeed;
+
+            Vector3 dir = targetPos - transform.position;
+            if (dir.magnitude <= .1f)
+                return Vector3.zero;
+            return dir.normalized * moveSpeed;
         }
     }
 
     override protected void Start()
-	{
+    {
         base.Start();
 
         StartCoroutine(ShootCycle());
-	}
+    }
 
     private IEnumerator ShootCycle()
     {
