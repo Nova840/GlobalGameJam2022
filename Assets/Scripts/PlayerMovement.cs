@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     [SerializeField]
-    private SpriteRenderer mainSprite;
+    private SpriteRenderer mainSpriteRenderer;
 
     [Min(0)]
     [SerializeField]
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float angleFromRight = Vector2.Angle(playerInput.GetShootingInputVector(), Vector2.right);
         if (angleFromRight != 90)//don't change if going exactly up or down
-            mainSprite.flipX = angleFromRight > 90;
+            mainSpriteRenderer.flipX = angleFromRight > 90;
     }
 
     private void FixedUpdate()
