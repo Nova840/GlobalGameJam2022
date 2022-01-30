@@ -11,6 +11,8 @@ public class HealthBar : MonoBehaviour
 
     private Health playerHealth;
 
+    private float fillAmount = 1;
+
     private void Awake()
     {
         playerHealth = GetComponentInParent<Health>();
@@ -24,7 +26,12 @@ public class HealthBar : MonoBehaviour
 
     private void OnHealthChange(float healthPercentage)
     {
-        fillImage.fillAmount = healthPercentage;
+        fillAmount = healthPercentage;
+    }
+
+    private void Update()
+    {
+        fillImage.fillAmount = Mathf.Lerp(fillImage.fillAmount, fillAmount, 10 * Time.unscaledDeltaTime);
     }
 
 }
