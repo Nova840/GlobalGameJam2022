@@ -229,7 +229,7 @@ MonoBehaviour:
   gameJoltAPIPrefab: {fileID: 155568, guid: 7a2e587034d846647b593aa159d7ed8d, type: 3}
   submitButton: {fileID: 854928214825229288}
   nameInputField: {fileID: 2486341161698693584}
-  maxCharsForName: 10
+  maxCharsForName: 15
   scoreTemplate: {fileID: 1183391199907340070}
   spacing: 18
 --- !u!1 &1183391198955327313
