@@ -67,22 +67,22 @@ public sealed class EnemyWaves : MonoBehaviour
         wave++;
         OnWaveChange?.Invoke(wave);
         if (betweenWavesDelay > 0)
-		{
-			yield return new WaitForSeconds(betweenWavesDelay);
-		}
+        {
+            yield return new WaitForSeconds(betweenWavesDelay);
+        }
 
-		StartCoroutine(SpawnEnemies());
+        StartCoroutine(SpawnEnemies());
     }
 
     private IEnumerator SpawnEnemies()
     {
+        while (Time.timeScale == 0)
+            yield return null;
         for (int i = 0; i < CurrentWave.numEnemies; i++)
         {
             Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], Random.insideUnitCircle.normalized * spawnDistanceFrom0, Quaternion.identity);
             if (i < CurrentWave.numEnemies - 1)//skip last element
-			{
-				yield return new WaitForSeconds(CurrentWave.spawnInterval);
-			}
-		}
+                yield return new WaitForSeconds(CurrentWave.spawnInterval);
+        }
     }
 }

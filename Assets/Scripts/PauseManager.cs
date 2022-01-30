@@ -26,6 +26,11 @@ public sealed class PauseManager : MonoBehaviour
 		}
 	}
 
-	private static bool HasTogglePause
-		=> Input.GetKeyDown(KeyCode.P);
+    private void OnDestroy()
+    {
+		Time.timeScale = 1;
+    }
+
+    private static bool HasTogglePause
+		=> Input.GetButtonDown("Pause");
 }
