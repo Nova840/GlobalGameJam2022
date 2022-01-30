@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: isLeftPlayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 128782180518808441, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 128782180518808441, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.60249317
+      objectReference: {fileID: 0}
+    - target: {fileID: 128782180518808441, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1885454433185097363, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
       propertyPath: shotPrefab
       value: 

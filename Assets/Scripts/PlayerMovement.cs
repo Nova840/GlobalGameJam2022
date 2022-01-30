@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0) return;
+
         float angleFromRight = Vector2.Angle(playerInput.GetShootingInputVector(), Vector2.right);
         if (angleFromRight != 90)//don't change if going exactly up or down
             mainSpriteRenderer.flipX = angleFromRight > 90;

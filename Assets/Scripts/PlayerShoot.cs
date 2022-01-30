@@ -24,6 +24,20 @@ public class PlayerShoot : MonoBehaviour
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
+        PauseManager.OnPauseUpdate += OnPauseUpdate;
+    }
+
+    private void OnDestroy()
+    {
+        PauseManager.OnPauseUpdate -= OnPauseUpdate;
+    }
+
+    private void OnPauseUpdate(bool isPaused)
+    {
+        if (isPaused)
+            aimPoint.gameObject.SetActive(false);
+        else
+            aimPoint.gameObject.SetActive(playerInput.GetShootButtonDown());
     }
 
     private void Start()
@@ -33,6 +47,8 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0) return;
+
         if (playerInput.GetShootButtonUp())
         {
             Shot shot = Instantiate(shotPrefab, transform.position, Quaternion.LookRotation(Vector3.forward, playerInput.GetShootingInputVector())).GetComponent<Shot>();
