@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &364432158071510387
+--- !u!1001 &2062838904960996460
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2332282800254640168, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
       propertyPath: m_Name
-      value: Tank Enemy
+      value: EnemyChase
       objectReference: {fileID: 0}
     - target: {fileID: 2332282800254640171, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
       propertyPath: m_RootOrder
@@ -55,33 +55,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2332282800619505067, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2332282800619505067, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2332282800619505067, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2332282801960227380, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5389339032906273717, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
-      propertyPath: hitDamage
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5389339032906273717, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
-      propertyPath: moveSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9221526673662205788, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
-      propertyPath: maxHealth
-      value: 500
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
+--- !u!212 &4394743390699491782 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2332282800619505066, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
+  m_PrefabInstance: {fileID: 2062838904960996460}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4394743391072564292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2332282800254640168, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
+  m_PrefabInstance: {fileID: 2062838904960996460}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6702455661293034626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394743391072564292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f23ccb993f2bc4a8159ebae9299b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainSprite: {fileID: 4394743390699491782}
+  element: 0
+  moveSpeed: 1
+  hitDamage: 25

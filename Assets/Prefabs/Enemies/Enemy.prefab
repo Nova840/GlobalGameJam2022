@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 2332282800254640171}
   - component: {fileID: 2332282800254640170}
   - component: {fileID: 8657706841991357010}
-  - component: {fileID: 5389339032906273717}
   - component: {fileID: 9221526673662205788}
   - component: {fileID: 6978903070397895862}
   m_Layer: 0
-  m_Name: Chase Enemy
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,20 +69,6 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
---- !u!114 &5389339032906273717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2332282800254640168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57f23ccb993f2bc4a8159ebae9299b7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1
-  hitDamage: 25
 --- !u!114 &9221526673662205788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +105,7 @@ GameObject:
   - component: {fileID: 2332282800619505067}
   - component: {fileID: 2332282800619505066}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,7 +169,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}

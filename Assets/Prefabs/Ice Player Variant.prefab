@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: isLeftPlayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 128782180518808441, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.85098046
+      objectReference: {fileID: 0}
+    - target: {fileID: 128782180518808441, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 128782180518808441, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.16470589
+      objectReference: {fileID: 0}
     - target: {fileID: 1885454433185097363, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
       propertyPath: shotPrefab
       value: 
@@ -45,15 +57,15 @@ PrefabInstance:
       objectReference: {fileID: -1194858020, guid: f56f81cc9ff032f42ac37706f55adb2a, type: 3}
     - target: {fileID: 3950147556943389784, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
       propertyPath: m_Color.b
-      value: 0.8490566
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3950147556943389784, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
       propertyPath: m_Color.g
-      value: 0.82414544
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3950147556943389784, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
       propertyPath: m_Color.r
-      value: 0.1802243
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6204682223712963860, guid: 961ea4391c60a36489de68e1a5958f4e, type: 3}
       propertyPath: m_Name

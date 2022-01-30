@@ -1,10 +1,9 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemyWaves : MonoBehaviour
+public sealed class EnemyWaves : MonoBehaviour
 {
     private int wave = 0;//starts from wave 0
 
@@ -68,8 +67,11 @@ public class EnemyWaves : MonoBehaviour
         wave++;
         OnWaveChange?.Invoke(wave);
         if (betweenWavesDelay > 0)
-            yield return new WaitForSeconds(betweenWavesDelay);
-        StartCoroutine(SpawnEnemies());
+		{
+			yield return new WaitForSeconds(betweenWavesDelay);
+		}
+
+		StartCoroutine(SpawnEnemies());
     }
 
     private IEnumerator SpawnEnemies()
@@ -78,8 +80,9 @@ public class EnemyWaves : MonoBehaviour
         {
             Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], Random.insideUnitCircle.normalized * spawnDistanceFrom0, Quaternion.identity);
             if (i < CurrentWave.numEnemies - 1)//skip last element
-                yield return new WaitForSeconds(CurrentWave.spawnInterval);
-        }
+			{
+				yield return new WaitForSeconds(CurrentWave.spawnInterval);
+			}
+		}
     }
-
 }

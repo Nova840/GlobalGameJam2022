@@ -1,10 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileEnemy : Enemy
+public sealed class ProjectileEnemy : Enemy
 {
-
     [SerializeField]
     private GameObject shotPrefab;
 
@@ -28,13 +26,23 @@ public class ProjectileEnemy : Enemy
     [SerializeField]
     private float distanceFromPlayerToShoot = 4;
 
-    protected override Vector2 Velocity()
+    protected override Vector2 Velocity
     {
-        Vector3 targetPos = TargetingPlayer.position + (transform.position - TargetingPlayer.position).normalized * distanceFromPlayerToStop;
-        return Vector2.ClampMagnitude(targetPos - transform.position, 1) * moveSpeed;
+        get
+        {
+            Vector3 targetPos = TargetingPlayer.position + (transform.position - TargetingPlayer.position).normalized * distanceFromPlayerToStop;
+            return Vector2.ClampMagnitude(targetPos - transform.position, 1) * moveSpeed;
+        }
     }
 
-    private IEnumerator Start()
+    override protected void Start()
+	{
+        base.Start();
+
+        StartCoroutine(ShootCycle());
+	}
+
+    private IEnumerator ShootCycle()
     {
         while (true)
         {
@@ -46,5 +54,4 @@ public class ProjectileEnemy : Enemy
             yield return new WaitForSeconds(shotInterval);
         }
     }
-
 }

@@ -1,13 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ChaseEnemy : Enemy
+public sealed class ChaseEnemy : Enemy
 {
-
-    protected override Vector2 Velocity()
-    {
-        return Vector2.ClampMagnitude(TargetingPlayer.position - transform.position, 1) * moveSpeed;
-    }
-
+	protected override Vector2 Velocity
+		=> Vector2.ClampMagnitude(TargetingPlayer.position - transform.position, 1) * moveSpeed;
 }

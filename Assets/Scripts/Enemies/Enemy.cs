@@ -1,11 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public abstract class Enemy : MonoBehaviour
 {
+    [SerializeField]
+    private SpriteRenderer mainSprite;
+
+    [SerializeField]
+    protected Element element;
 
     [Min(0)]
     [SerializeField]
@@ -21,35 +23,41 @@ public abstract class Enemy : MonoBehaviour
 
     public static event Action OnEnemyDefeated;
 
-    protected abstract Vector2 Velocity();
+	protected abstract Vector2 Velocity { get; }
 
-    protected virtual void Awake()
+	protected virtual void Awake()
+        => _rigidbody = GetComponent<Rigidbody2D>();
+
+	protected virtual void Start() 
+        => TargetingPlayer = element switch
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
-        TargetingPlayer = Random.Range(0, 2) == 0 ? Player.leftPlayer : Player.rightPlayer;
+        Element.FIRE => Player.LeftPlayer,
+        Element.ICE => Player.RightPlayer,
+        _ => Player.RightPlayer,
+    };
 
-        //temporary until I get artwork
-        Transform otherPlayer = TargetingPlayer == Player.leftPlayer ? Player.rightPlayer : Player.leftPlayer;
-        GetComponentInChildren<SpriteRenderer>().color = otherPlayer.GetComponentInChildren<SpriteRenderer>().color;
+    private void Update()
+    {
+		if (Vector2.Angle(_rigidbody.velocity, Vector2.right) != 90)
+        {
+            mainSprite.flipX = !(Vector2.Angle(_rigidbody.velocity, Vector2.right) > 90);
+        }
     }
 
     protected virtual void FixedUpdate()
-    {
-        _rigidbody.velocity = Velocity();
-    }
+        => _rigidbody.velocity = Velocity;
 
-    protected virtual void OnDestroy()
-    {
-        OnEnemyDefeated?.Invoke();
-    }
+	protected virtual void OnDestroy() 
+        => OnEnemyDefeated?.Invoke();
 
-    protected virtual void OnTriggerEnter2D(Collider2D collider)
+	protected virtual void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("PlayerHitTrigger") && collider.attachedRigidbody.TryGetComponent(out Player player) && player.transform == TargetingPlayer)
+        if (collider.CompareTag("PlayerHitTrigger")
+            && collider.attachedRigidbody.TryGetComponent(out Player player)
+            && player.transform == TargetingPlayer)
         {
             player.GetComponent<Health>().Damage(hitDamage);
             Destroy(gameObject);
         }
     }
-
 }
