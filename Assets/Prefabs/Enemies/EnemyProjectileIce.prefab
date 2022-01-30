@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: 1806960360094286964, guid: 86979dff9a914544b961f2ed91691265, type: 3}
       propertyPath: shotPrefab
       value: 
-      objectReference: {fileID: 5134570282773270235, guid: 5dcb53db2ecf012498d824721439b505, type: 3}
+      objectReference: {fileID: 5134570282773270235, guid: a44fdaa5805173c4ab244f786e4c25cc, type: 3}
     - target: {fileID: 6907191051397694164, guid: 86979dff9a914544b961f2ed91691265, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
