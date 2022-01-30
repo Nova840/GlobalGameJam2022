@@ -5,6 +5,10 @@ public sealed class Health : MonoBehaviour
 {
     [SerializeField]
     private int maxHealth = 100;
+
+    [SerializeField]
+    private AudioSource OnHitSound;
+
     public int MaxHealth => maxHealth;
 
     private int currentHealth;
@@ -14,9 +18,7 @@ public sealed class Health : MonoBehaviour
     public event Action OnDeath;
 
     private void Start()
-    {
-        currentHealth = maxHealth;
-    }
+        => currentHealth = maxHealth;
 
     public void Damage(int amount)
     {
@@ -26,6 +28,11 @@ public sealed class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             OnDeath?.Invoke();
+        }
+
+        if (OnHitSound)
+        {
+            OnHitSound.Play();
         }
     }
 }

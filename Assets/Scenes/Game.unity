@@ -463,9 +463,12 @@ MonoBehaviour:
     spawnInterval: 0.2
   betweenWavesDelay: 3
   enemyPrefabs:
-  - {fileID: 2332282800254640168, guid: 4d6f7df0b5baaa04c9661e2df476eb0a, type: 3}
-  - {fileID: 6907191051561379671, guid: 86979dff9a914544b961f2ed91691265, type: 3}
-  - {fileID: 2689589903917495643, guid: 6ef5f0738b4717944ac84a649678738c, type: 3}
+  - {fileID: 7380435482445607172, guid: 4fba71ab99b5f4f4fbec4a87ff8dafb6, type: 3}
+  - {fileID: 7380435482445607172, guid: e4bddf5bc08e6e944b52267b99d39ba7, type: 3}
+  - {fileID: 4202407207583592459, guid: 1d8f3330d3597a44d8f3015a3e99d5bd, type: 3}
+  - {fileID: 4202407207583592459, guid: cffa696224097de4baeeff2ba94dbde8, type: 3}
+  - {fileID: 8446305271463565708, guid: 65b7a0b190c88d74b81d717cd11d20e6, type: 3}
+  - {fileID: 8446305271463565708, guid: 1d3c547bb9a5e8e4b8a611c9473bcfa2, type: 3}
   spawnDistanceFrom0: 10
 --- !u!114 &487407094
 MonoBehaviour:
