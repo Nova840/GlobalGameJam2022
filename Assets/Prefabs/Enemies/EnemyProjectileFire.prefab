@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1806960360094286964, guid: 86979dff9a914544b961f2ed91691265, type: 3}
       propertyPath: shotPrefab
       value: 
-      objectReference: {fileID: 7071148188164769338, guid: 2691ed4be5d84824da88a5161a7ff544, type: 3}
+      objectReference: {fileID: 7071148188164769338, guid: 274d5cb883cbccb4cbd9db65f0e67754, type: 3}
     - target: {fileID: 6907191051397694164, guid: 86979dff9a914544b961f2ed91691265, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
