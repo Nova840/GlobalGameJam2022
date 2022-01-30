@@ -15,5 +15,6 @@ public sealed class GameManager : MonoBehaviour
 		fireCharacter.OnDeath += HandlePlayerDeath;
 	}
 
-	private void HandlePlayerDeath() => sceneHandler.EndScreen();
+	private void HandlePlayerDeath() 
+		=> sceneHandler.TransitionToEndScreen();
 }
