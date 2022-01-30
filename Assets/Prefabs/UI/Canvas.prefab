@@ -1019,7 +1019,7 @@ PrefabInstance:
       objectReference: {fileID: 837537800992716098}
     - target: {fileID: 4819128431254760781, guid: f9434b8b8f2fdbb4bbe5a98231d0d7d7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      value: TransitionToGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9434b8b8f2fdbb4bbe5a98231d0d7d7, type: 3}

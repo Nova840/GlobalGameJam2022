@@ -1,17 +1,35 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public sealed class TransitionToMainMenu : MonoBehaviour
+public sealed class TransitionScene : MonoBehaviour
 {
 	private const string TRANSITION_SCENE = "Transition";
 
 	[SerializeField]
 	private SceneHandler sceneHandler;
 
+	public static string NextSceneName { get; private set; }
+
+	public static void TransitionToScene(string sceneName)
+	{
+		if (!SceneManager.GetSceneByName(TRANSITION_SCENE).IsValid())
+		{
+			NextSceneName = sceneName;
+			SceneManager.LoadScene(TRANSITION_SCENE, LoadSceneMode.Additive);
+		}
+	}
+
 	public void Start()
 		=> Time.timeScale = 0;
 
 	public void LoadLevel()
+	{
+		UnloadPreviousScene();
+
+		SceneManager.LoadScene(NextSceneName, LoadSceneMode.Additive);
+	}
+
+	private static void UnloadPreviousScene()
 	{
 		var scenesCount = SceneManager.sceneCount;
 		for (int i = 0; i < scenesCount; ++i)
@@ -23,8 +41,6 @@ public sealed class TransitionToMainMenu : MonoBehaviour
 				SceneManager.UnloadSceneAsync(scene);
 			}
 		}
-
-		sceneHandler.EndScreen();
 	}
 
 	public void PlaySound()

@@ -6,5 +6,5 @@ public sealed class EndScreen : MonoBehaviour
     private TMPro.TMP_Text text;
 
 	private void Start() 
-        => text.text = $"Score: {ScoreManager.LoadScore()}";
+        => text.text = $"Score\n{ScoreManager.LoadScore()}";
 }

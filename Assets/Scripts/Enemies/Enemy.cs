@@ -23,34 +23,34 @@ public abstract class Enemy : MonoBehaviour
 
     public static event Action OnEnemyDefeated;
 
-	protected abstract Vector2 Velocity { get; }
+    protected abstract Vector2 Velocity { get; }
 
-	protected virtual void Awake()
+    protected virtual void Awake()
         => _rigidbody = GetComponent<Rigidbody2D>();
 
-	protected virtual void Start() 
+    protected virtual void Start()
         => TargetingPlayer = element switch
-    {
-        Element.FIRE => Player.LeftPlayer,
-        Element.ICE => Player.RightPlayer,
-        _ => Player.RightPlayer,
-    };
+        {
+            Element.FIRE => Player.LeftPlayer,
+            Element.ICE => Player.RightPlayer,
+            _ => Player.RightPlayer,
+        };
 
     private void Update()
     {
-		if (Vector2.Angle(_rigidbody.velocity, Vector2.right) != 90)
+        if (Vector2.Angle(_rigidbody.velocity, Vector2.right) != 90)
         {
-            mainSprite.flipX = !(Vector2.Angle(_rigidbody.velocity, Vector2.right) > 90);
+            mainSprite.flipX = !(Vector2.Angle(TargetingPlayer.position - transform.position, Vector2.right) > 90);
         }
     }
 
     protected virtual void FixedUpdate()
         => _rigidbody.velocity = Velocity;
 
-	protected virtual void OnDestroy() 
+    protected virtual void OnDestroy()
         => OnEnemyDefeated?.Invoke();
 
-	protected virtual void OnTriggerEnter2D(Collider2D collider)
+    protected virtual void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("PlayerHitTrigger")
             && collider.attachedRigidbody.TryGetComponent(out Player player)
