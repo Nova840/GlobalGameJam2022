@@ -181,10 +181,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Play as fire and ice characters who have teamed up to defeat hordes of
-    angry elementals!\r\n\n \u2022 Fire defeats ice, ice defeats fire\r\n \u2022
-    WASD to move ice character\r\n \u2022 Arrow keys to move fire character\r\n \u2022
-    Space bar to shoot"
+  m_text: "Play as fire and ice elementals who have teamed up to defeat hordes of
+    enemies!\r\n\n \u2022 Fire defeats ice, ice defeats fire\r\n \u2022 WASD/Left
+    Stick to move ice elemental\n \u2022 Arrow Keys/Right Stick to move fire elemental\n\u2022
+    Spacebar to shoot both ice and fire elemental\n \u2022 Left Trigger to shoot
+    ice elemental\n \u2022 Right Trigger to shoot fire elemental"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -211,7 +212,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 34.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -219,7 +220,7 @@ MonoBehaviour:
   m_fontSizeMax: 36
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
